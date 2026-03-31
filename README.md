@@ -52,7 +52,7 @@ This prototype explores a system where:
     }
   ]
 }
-
+```
 ---
 
 ## Project Structure
@@ -66,6 +66,23 @@ src/
     printer.ts
   index.ts
 
-mergeEngine.ts → core merge logic
-sectionGrouper.ts → section creation
-printer.ts → CLI output formatting
+- mergeEngine.ts → core merge logic
+- sectionGrouper.ts → section creation
+- printer.ts → CLI output formatting
+
+---
+
+## How It Works
+
+1. Input:
+- Base version (optional)
+- Local version
+- Remote version
+2. Merge Engine:
+- Performs 3-way or 2-way comparison
+- Identifies differences
+- Groups them into sections
+3. Output:
+- Structured sections
+- Safe vs conflict classification
+- Preview plan for rendering
