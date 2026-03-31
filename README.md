@@ -57,13 +57,13 @@ This prototype explores a system where:
 
 ## Project Structure
 
-src/
-  merge/
-    mergeEngine.ts
-    sectionGrouper.ts
-    types.ts
-  cli/
-    printer.ts
+src/<br>
+  merge/<br>
+    mergeEngine.ts<br>
+    sectionGrouper.ts<br>
+    types.ts<br>
+  cli/<br>
+    printer.ts<br>
   index.ts
 
 - mergeEngine.ts → core merge logic
