@@ -1,0 +1,22 @@
+{
+  "name": "conflict-resolution-merge-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Core note merge classification engine (3-way/2-way) with JSON-oriented output",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "diff": "^8.0.4",
+    "node-diff3": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}

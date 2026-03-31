@@ -1,1 +1,71 @@
-# joplin-conflict-merge-engine-poc
+# Joplin Conflict Merge Engine (PoC)
+
+This repository contains a prototype implementation of a **conflict resolution merge engine** designed for the Joplin GSoC 2026 Idea: *Automatic Conflict Resolution*.
+
+The goal of this PoC is to validate the **core merge logic** and demonstrate how note conflicts can be classified into structured sections that can later power a conflict resolution UI.
+
+---
+
+## Overview
+
+Joplin currently handles conflicts by duplicating notes, leaving resolution entirely manual.
+
+This prototype explores a system where:
+
+- Notes are compared using **3-way merge (base, local, remote)**
+- A **2-way fallback** is used when base is unavailable
+- Changes are grouped into **sections (not individual lines)**
+- Each section is classified as:
+  - `safe` → can be merged without conflict
+  - `conflict` → requires user intervention
+
+---
+
+## Key Features
+
+- 3-way merge support
+- 2-way fallback (no base case)
+- Section-based grouping of changes
+- Deterministic conflict classification:
+  - `identical`
+  - `local_only`
+  - `remote_only`
+  - `both_modified`
+  - `no_base_conflict`
+- Structured JSON output (UI-ready)
+- Non-persistent merge preview
+
+---
+
+## Example Output
+
+```json
+{
+  "isClean": false,
+  "sections": [
+    {
+      "index": 1,
+      "type": "conflict",
+      "reason": "both_modified",
+      "startLine": 6,
+      "endLine": 8
+    }
+  ]
+}
+
+---
+
+## Project Structure
+
+src/
+  merge/
+    mergeEngine.ts
+    sectionGrouper.ts
+    types.ts
+  cli/
+    printer.ts
+  index.ts
+
+mergeEngine.ts → core merge logic
+sectionGrouper.ts → section creation
+printer.ts → CLI output formatting
