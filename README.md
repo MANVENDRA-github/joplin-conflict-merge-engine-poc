@@ -1,4 +1,4 @@
-# Joplin Conflict Merge Engine (PoC)
+# Joplin Conflict Merge Engine. (PoC)
 
 This repository contains a prototype implementation of a **conflict resolution merge engine** designed for the Joplin GSoC 2026 Idea: *Automatic Conflict Resolution*.
 
